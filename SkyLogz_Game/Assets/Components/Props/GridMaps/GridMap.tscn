@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="MeshLibrary" id=1]
+
+[node name="GridMap" type="GridMap"]
+mesh_library = SubResource( 1 )
+cell_size = Vector3( 2, 0.25, 2 )
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
