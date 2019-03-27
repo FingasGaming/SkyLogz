@@ -3,7 +3,6 @@ C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\SkyLogz.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\GodotSharp.dll
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\GodotSharp.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\GodotSharp.xml
-C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.csprojAssemblyReference.cache
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.csproj.CoreCompileInputs.cache
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.csproj.CopyComplete
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.dll

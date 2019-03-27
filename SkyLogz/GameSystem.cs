@@ -55,8 +55,6 @@ namespace SkyLogz
         public int leg_strength { get; set; }
         public int in_air { get; set; }
         public bool has_contact { get; set; }
-        //slops
-        public int max_slop_angle { get; set; }
     }
     public static class MovementSystem
     {
@@ -163,42 +161,19 @@ namespace SkyLogz
             }
 
             //normalize direction for constant speeed
-            var dir = model.direction;
-            dir.y = 0;
-            model.direction = dir.Normalized();
-            //get raycast
-            var foot = body.GetNode("Foot") as RayCast;
-            if (foot == null)
-            {
-                GD.Print("foot null");
-            }
-            var velocity = model.velocity;
-            velocity.y = 0;
-            //gravity scale
-            //var y = velocity.y + model.gravity * delta;
-            var y = 0f;
+            model.direction = model.direction.Normalized();
+
             //test if on floor
             if (body.IsOnFloor())
             {
                 model.has_contact = true;
-                var n = foot.GetCollisionNormal();
-                var floor_angle = Mathf.Rad2Deg(Mathf.Acos(n.Dot(Vector3.Up)));
-                GD.Print("on floor");
-                if (floor_angle > model.max_slop_angle)
-                {
-                    //apply gravity
-                    y = velocity.y += model.gravity * delta;
-                    GD.Print("apply gravity");
-                }
             }
             else
-            {   //in the air
-                GD.Print("in air: " + model.in_air);
-                if (foot.IsColliding())
+            {
+                var foot = body.GetNode("Foot") as RayCast;
+                if (foot != null && foot.IsColliding())
                 {
                     model.has_contact = false;
-                    y = velocity.y += model.gravity * delta;
-                    GD.Print("force gravity");
                 }
             }
 
@@ -207,6 +182,9 @@ namespace SkyLogz
                 body.MoveAndCollide(new Vector3(0, -1, 0));
             }
 
+            var velocity = model.velocity;
+            var y = velocity.y;
+            velocity.y = 0;
             var speed = 0;
             if (Input.IsActionPressed("move_sprint"))
             {
@@ -232,8 +210,8 @@ namespace SkyLogz
             //calculate distance to go
             velocity = velocity.LinearInterpolate(target, accel * delta);
 
-            //set gravity effect
-            velocity.Set(velocity.x, y , velocity.z);
+            //deal with gravity
+            velocity.Set(velocity.x, y += model.gravity * delta, velocity.z);
 
 
             if (Input.IsActionJustPressed("jump") && model.has_contact)
@@ -248,7 +226,7 @@ namespace SkyLogz
             }
 
             //move
-            velocity = body.MoveAndSlide(velocity, Vector3.Up, true);
+            velocity = body.MoveAndSlide(velocity, new Vector3(0,1,0), true);
             model.velocity = velocity;
         }
     }
