@@ -13,6 +13,7 @@ points = PoolVector3Array( 25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, -25 )
 [node name="Level" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
+editor/display_folded = true
 mesh = SubResource( 2 )
 material/0 = null
 
