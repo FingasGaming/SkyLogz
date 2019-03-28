@@ -10,3 +10,4 @@ C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\Newtonsoft.Json.dll
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Debug\Newtonsoft.Json.xml
+C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Debug\SkyLogz.csprojAssemblyReference.cache

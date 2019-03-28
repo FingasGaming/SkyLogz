@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using SkyLogz;
 
 public class Game : Spatial
 {
@@ -14,14 +15,19 @@ public class Game : Spatial
         GD.Print("SkyLogz Game Launch");
         SkyLogz.GameSystem.RunTest();
         SkyLogz.GameSystem.GameReady();
-        
+
+        //var scene = GameSystem.Preload("res://Assets/Levels/Level_1.tscn");
+        //var instance = scene.Instance();
+
+        //GetNode("Loaded").AddChild(instance);
+        //Extension.Preload(this, "");
     }
     public override void _Input(InputEvent @event)
     {
-        SkyLogz.GameSystem.HandleGameEvent(GetTree());
+        SkyLogz.GameSystem.HandleGameEvent(this);
     }
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(float delta)
-  {
-  }
+    {
+    }
 }

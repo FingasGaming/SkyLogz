@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 2, 5, 0.2 )
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( -1, 2.5, 0.1, 1, 2.5, -0.1, 1, 2.5, 0.1, -1, 2.5, -0.1, -1, -2.5, 0.1, 1, -2.5, -0.1, 1, -2.5, 0.1, -1, -2.5, -0.1, 1, 2.5, 0.1, -1, 2.5, -0.1, 1, 2.5, -0.1, -1, 2.5, 0.1, 1, -2.5, 0.1, -1, -2.5, -0.1, 1, -2.5, -0.1, -1, -2.5, 0.1, 1, 2.5, 0.1, -1, -2.5, 0.1, -1, 2.5, 0.1, 1, -2.5, 0.1, 1, 2.5, -0.1, -1, -2.5, -0.1, -1, 2.5, -0.1, 1, -2.5, -0.1 )
+
+[sub_resource type="ConvexPolygonShape" id=7]
+points = PoolVector3Array( -1, 2.5, 0.1, 1, 2.5, -0.1, 1, 2.5, 0.1, -1, 2.5, -0.1, -1, -2.5, 0.1, 1, -2.5, -0.1, 1, -2.5, 0.1, -1, -2.5, -0.1, 1, 2.5, 0.1, -1, 2.5, -0.1, 1, 2.5, -0.1, -1, 2.5, 0.1, 1, -2.5, 0.1, -1, -2.5, -0.1, 1, -2.5, -0.1, -1, -2.5, 0.1, 1, 2.5, 0.1, -1, -2.5, 0.1, -1, 2.5, 0.1, 1, -2.5, 0.1, 1, 2.5, -0.1, -1, -2.5, -0.1, -1, 2.5, -0.1, 1, -2.5, -0.1 )
+
+[node name="slops" type="Spatial"]
+
+[node name="slop45" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09086e-008, -3.09086e-008, -11, 1, 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="slop45"]
+editor/display_folded = true
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="slop45/MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="slop45/MeshInstance/StaticBody"]
+shape = SubResource( 6 )
+
+[node name="slop15" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0.965926, 0.258819, 0, 0.258819, -0.965926, -1, -4.2222e-008, -1.13133e-008, -11, 0.5, 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="slop15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="slop15/MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="slop15/MeshInstance2/StaticBody"]
+shape = SubResource( 7 )
+

@@ -28,7 +28,7 @@ public class PlayerCharacter : KinematicBody
             leg_strength = 15,
             in_air = 0,
             has_contact = false,
-            //max_slop_angle = 35
+            max_slop_angle = 35
         };
         
     }
