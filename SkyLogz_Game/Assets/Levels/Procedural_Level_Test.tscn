@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Scripts/Levels/ProceduralLevelt.cs" type="Script" id=1]
+
+[node name="PreceduralLevel" type="Spatial"]
+script = ExtResource( 1 )
+LevelGridSize = 10
+TileSize = 10
+ProceduralItemNames = PoolStringArray( "10x10/Procedural_0", "10x10/Procedural_01" )
+

@@ -1,38 +1,36 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://StartUp/Game.cs" type="Script" id=1]
-[ext_resource path="res://Assets/Levels/BaseLevel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Components/Props/GridMaps/test.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Components/Props/Prop/Ladder.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Components/Props/Prop/slops.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Components/Player/PlayerCharacter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Components/UI/Menus/MainMenu/MainMenu.tscn" type="PackedScene" id=7]
-[ext_resource path="res://default_env.tres" type="Environment" id=8]
+[ext_resource path="res://Assets/Levels/Room_test.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Levels/BaseLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Components/Player/PlayerCharacter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Components/UI/Menus/MainMenu/MainMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://default_env.tres" type="Environment" id=6]
 
 [node name="Game" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Level" parent="." instance=ExtResource( 2 )]
-editor/display_folded = true
+[node name="InstantDungeon" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.95776, 0 )
+tileSize = 10
+numRooms = 10
+minSize = 4
+maxSize = 10
 
-[node name="Spatial" parent="Level" instance=ExtResource( 3 )]
-
-[node name="Ladder" parent="Level" instance=ExtResource( 4 )]
-
-[node name="slops" parent="Level" instance=ExtResource( 5 )]
+[node name="Level" parent="." instance=ExtResource( 3 )]
 
 [node name="Loaded" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9548, 0, 0 )
+visible = false
 
-[node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
+[node name="PlayerCharacter" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.384508, 0, -0.923122, 0, 1, 0, 0.923122, 0, 0.384508, -8.43984, 4.20462, -1.33989 )
 
-[node name="MainMenu" parent="." instance=ExtResource( 7 )]
-visible = false
+[node name="MainMenu" parent="." instance=ExtResource( 5 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 editor/display_folded = true
-environment = ExtResource( 8 )
+environment = ExtResource( 6 )
 
 [node name="Sun" type="DirectionalLight" parent="WorldEnvironment"]
 transform = Transform( 0.572822, 0.327034, -0.751614, 0.818741, -0.184409, 0.543743, 0.0392183, -0.926845, -0.37339, 0, 2.23294, 0 )

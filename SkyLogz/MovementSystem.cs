@@ -34,10 +34,13 @@ namespace SkyLogz
             model.camera_change = new Vector2();
         }
         public static void HandlePlayerCamera(InputEvent @event, PlayerModel model, Spatial head)
-        {            
-            if (@event is InputEventMouseMotion)
+        {
+            if (Input.GetMouseMode().Equals(Input.MouseMode.Captured))
             {
-                model.camera_change = (@event as InputEventMouseMotion).Relative;                
+                if (@event is InputEventMouseMotion)
+                {
+                    model.camera_change = (@event as InputEventMouseMotion).Relative;
+                }
             }
         }
         public static void MovePlayer(KinematicBody body, PlayerModel model, Spatial head, float delta)
@@ -189,6 +192,24 @@ namespace SkyLogz
             //move
             velocity = body.MoveAndSlide(velocity, new Vector3(0,1,0), true,floorMaxAngle: Mathf.Deg2Rad(model.max_slop_angle));
             model.velocity = velocity;
+        }
+    }
+
+    public static class MenuSystem
+    {
+        public static void HandleMenuEvents(InputEvent @event, Button quit = null, Button option = null, Button newgame = null)
+        {
+            if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == (int)ButtonList.Left && mbe.Pressed)
+            {
+                GD.Print("Left mouse button pressed");
+
+
+                if (quit != null && quit.IsPressed())
+                {
+                    quit.GetTree().Quit();
+                }
+            }
+
         }
     }
 }

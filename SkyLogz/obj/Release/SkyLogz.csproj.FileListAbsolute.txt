@@ -11,3 +11,15 @@ C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\obj\Release\SkyLogz.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.dll
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.pdb
 C:\Users\USER\Source\Repos\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.xml
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\SkyLogz.dll
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\SkyLogz.pdb
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.dll
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\GodotSharp.pdb
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\GodotSharp.xml
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.pdb
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\bin\Release\Newtonsoft.Json.xml
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\obj\Release\SkyLogz.csprojAssemblyReference.cache
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\obj\Release\SkyLogz.csproj.CoreCompileInputs.cache
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\obj\Release\SkyLogz.csproj.CopyComplete
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\obj\Release\SkyLogz.dll
+C:\Users\USER\Source\Local\GameProjects\SkyLogz\SkyLogz\obj\Release\SkyLogz.pdb
